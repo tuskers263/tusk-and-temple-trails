@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tusk & Temple Trails | Polonnaruwa Tours, Safaris & Stays</title>
+    <style>
+        :root {
+            --primary: #1b4332;      /* Deep Jungle Green */
+            --primary-dark: #0f291e;
+            --secondary: #d4a373;    /* Ancient Temple Gold */
+            --accent: #25D366;       /* WhatsApp Green */
+            --fb-blue: #1877F2;      /* Facebook Blue */
+            --bg-light: #fdfbf7;     /* Soft Cream */
+            --bg-alt: #f3efe6;       /* Warm Sand */
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            padding: 15px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: var(--white) !important;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        /* Hero Section - Polonnaruwa Ruins & Elephants Vibe */
+        .hero {
+            background: linear-gradient(rgba(12, 30, 20, 0.62), rgba(12, 30, 20, 0.78)), 
+                        url('hero.JPEG') center/cover no-repeat;
+            min-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 40px 20px;
+        }
+
+        .hero-tag {
+            background-color: rgba(212, 163, 115, 0.22);
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.3rem;
+            max-width: 850px;
+            margin-bottom: 16px;
+            line-height: 1.18;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 680px;
+            margin-bottom: 32px;
+            color: #f3f4f6;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            width: 100%;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-fb-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.18);
+        }
+
+        .btn-gold {
+            background-color: var(--secondary);
+            color: var(--primary-dark);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-fb {
+            background-color: var(--fb-blue);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+        }
+
+        /* Common Section Layout */
+        section {
+            padding: 80px 7%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 26px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .service-img {
+            height: 210px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 22px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.25rem;
+        }
+
+        .service-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .service-link {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Packages Section */
+        .packages-bg {
+            background-color: var(--bg-alt);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top: 5px solid var(--primary);
+        }
+
+        .package-card.featured {
+            border-top: 5px solid var(--secondary);
+            transform: scale(1.02);
+        }
+
+        .pkg-img {
+            width: 100%;
+            height: 185px;
+            object-fit: cover;
+        }
+
+        .pkg-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pkg-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+
+        .package-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .pkg-price {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .pkg-price span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .pkg-list {
+            list-style: none;
+            margin-bottom: 22px;
+        }
+
+        .pkg-list li {
+            padding: 6px 0;
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .pkg-list li::before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Custom Trip Builder & Feedback Form */
+        .builder-container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border: 1px solid #e5e7eb;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+            margin-bottom: 26px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            background: #fafafa;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--primary);
+            background: #f0fdf4;
+        }
+
+        .checkbox-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 0.98rem;
+            background: var(--white);
+        }
+
+        /* Why Choose Us */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            text-align: center;
+        }
+
+        .trust-box {
+            padding: 28px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+
+        .trust-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Guest Reviews & Feedback Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 26px;
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            border-left: 5px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-stars {
+            color: #f59e0b;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            color: var(--text-dark);
+            font-style: italic;
+            font-size: 0.96rem;
+            margin-bottom: 18px;
+        }
+
+        .review-author {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f3f4f6;
+            padding-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        .review-author strong {
+            color: var(--primary);
+        }
+
+        .review-badge {
+            background: #ecfdf5;
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 20px;
+        }
+
+        .feedback-box {
+            max-width: 780px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 36px;
+            border-radius: 16px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+            border: 1px solid #e5e7eb;
+        }
+
+        .feedback-box h3 {
+            color: var(--primary);
+            font-size: 1.45rem;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .feedback-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .fb-actions-row {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .fb-actions-row .btn {
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+        }
+
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        footer p {
+            color: #d1d5db;
+            margin-top: 8px;
+            font-size: 0.92rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .package-card.featured { transform: none; }
+            .builder-container, .feedback-box { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">🐘 Tusk & Temple <span>Trails</span></a>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
+            <a href="#custom-trip">Custom Trip</a>
+            <a href="#about">Why Us</a>
+            <a href="#reviews">Reviews</a>
+            <a href="https://wa.me/94769670231?text=Hello%20Tusk%20%26%20Temple%20Trails!%20I%20would%20like%20to%20inquire%20about%20a%20Polonnaruwa%20tour." target="_blank" class="nav-btn">WhatsApp Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-tag">Polonnaruwa • Sri Lanka</div>
+        <h1>Tusk & Temple Trails</h1>
+        <p>Your trusted local agency in Polonnaruwa for Elephant Transit Home visits, 4x4 wildlife safaris, village tuk-tuk tours, sunset lake boat rides, and comfortable hotel stays.</p>
+        <div class="hero-actions">
+            <div class="hero-btns">
+                <a href="#custom-trip" class="btn btn-gold">Customize Your Trip</a>
+                <a href="https://wa.me/94769670231?text=Hello%20Tusk%20%26%20Temple%20Trails!%20I%20want%20to%20plan%20my%20trip%20in%20Polonnaruwa." target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
+            </div>
+            <div class="btn-fb-row">
+                <a href="https://www.facebook.com/share/1CgUHRHGKw/" target="_blank" rel="noopener noreferrer" class="btn btn-fb">View Our Work on Facebook</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-header">
+            <h2>All Your Polonnaruwa Experiences in One Place</h2>
+            <p>No need to book separately. Tell us what you need and our local team will arrange everything smoothly at honest local prices.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Elephant Transit Home -->
+            <div class="service-card">
+                <img src="elephant.JPG" alt="Polonnaruwa Elephant Transit Home" class="service-img">
+                <div class="service-content">
+                    <div>
+                        <h3>Elephant Transit Home Visits</h3>
+                        <p>Visit the newly established Elephant Transit Home right in our village to watch orphaned baby elephants and learn about wildlife care.</p>
+                    </div>
+                    <a href="#custom-trip" class="service-link">Add to My Trip →</a>
+                </div>
+            </div>
+
+            <!-- Wildlife Jeep Safari -->
+            <div class="service-card">
+                <img src="safari.PNG" alt="Minneriya and Kaudulla Jeep Safari" class="service-img">
+                <div class="service-content">
+                    <div>
+                        <h3>4x4 Wildlife Jeep Safaris</h3>
+                        <p>Private morning or afternoon safari jeeps to Minneriya, Kaudulla, or Wasgamuwa National Parks with skilled local trackers.</p>
+                    </div>
+                    <a href="#custom-trip" class="service-link">Add to My Trip →</a>
+                </div>
+            </div>
+
+            <!-- Ancient Ruins & Tuk-Tuk -->
+            <div class="service-card">
+                <img src="ruins.AVIF" alt="Polonnaruwa Ancient City Ruins" class="service-img">
+                <div class="service-content">
+                    <div>
+                        <h3>Ancient Ruins & Tuk-Tuk Tours</h3>
+                        <p>Explore the UNESCO World Heritage ruins, Gal Vihara, and scenic rural paddy trails in a comfortable private tuk-tuk.</p>
+                    </div>
+                    <a href="#custom-trip" class="service-link">Add to My Trip →</a>
+                </div>
+            </div>
+
+            <!-- Boat Rides -->
+            <div class="service-card">
+                <img src="sunset.JPG" alt="Parakrama Samudra Sunset Boat Ride" class="service-img">
+                <div class="service-content">
+                    <div>
+                        <h3>Sunset Lake Boat Rides</h3>
+                        <p>Relaxing boat tours across the historic Parakrama Samudra reservoir with golden sunset views and exotic birdwatching.</p>
+                    </div>
+                    <a href="#custom-trip" class="service-link">Add to My Trip →</a>
+                </div>
+            </div>
+
+            <!-- Hotel & Rooms -->
+            <div class="service-card">
+                <img src="resort.JPG" alt="Polonnaruwa Hotels and Homestays" class="service-img">
+                <div class="service-content">
+                    <div>
+                        <h3>Hotel Rooms & Eco-Stays</h3>
+                        <p>Clean, safe, and handpicked lake-view hotels, guesthouses, or authentic village homestays booked at fair local rates.</p>
+                    </div>
+                    <a href="#custom-trip" class="service-link">Add to My Trip →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="packages-bg">
+        <div class="section-header">
+            <h2>Popular Polonnaruwa Tour Packages</h2>
+            <p>Click "Book via WhatsApp" on any package to send the full package details directly to us.</p>
+        </div>
+
+        <div class="packages-grid">
+            <!-- Package 1 -->
+            <div class="package-card">
+                <img src="eliphant trail.JPG" alt="Village and Elephant Trail" class="pkg-img">
+                <div class="pkg-body">
+                    <div>
+                        <span class="pkg-badge">HALF-DAY TOUR (4-5 HOURS)</span>
+                        <h3>Village & Elephant Trail</h3>
+                        <div class="pkg-price">$35 <span>/ per person</span></div>
+                        <ul class="pkg-list">
+                            <li>Elephant Transit Home Guided Visit</li>
+                            <li>Private Tuk-Tuk Village & Paddy Ride</li>
+                            <li>Authentic Sri Lankan Village Lunch</li>
+                            <li>Local English-Speaking Guide</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/94769670231?text=Hello%20Tusk%20%26%20Temple%20Trails!%20%F0%9F%90%98%0A%0AI%20would%20like%20to%20book%20this%20package%3A%0A*Package%3A*%20Village%20%26%20Elephant%20Trail%20(%2435%2Fperson)%0A%0APlease%20let%20me%20know%20available%20dates!" target="_blank" class="btn btn-gold" style="text-align:center;">Book via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Package 2 -->
+            <div class="package-card featured">
+                <img src="ruins explore.JPG" alt="Full-Day Polonnaruwa Explorer" class="pkg-img">
+                <div class="pkg-body">
+                    <div>
+                        <span class="pkg-badge" style="background:var(--secondary); color:var(--primary-dark);">MOST POPULAR • FULL DAY</span>
+                        <h3>Tusk & Temple Full-Day Explorer</h3>
+                        <div class="pkg-price">$75 <span>/ per person</span></div>
+                        <ul class="pkg-list">
+                            <li>Polonnaruwa Ancient City Ruins Tuk-Tuk Tour</li>
+                            <li>Afternoon 4x4 Wildlife Jeep Safari</li>
+                            <li>Sunset Boat Ride on Parakrama Samudra</li>
+                            <li>Bottled Water, Snacks & Local Guide</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/94769670231?text=Hello%20Tusk%20%26%20Temple%20Trails!%20%F0%9F%90%98%F0%9F%8F%9B%EF%B8%8F%0A%0AI%20would%20like%20to%20book%20this%20package%3A%0A*Package%3A*%20Tusk%20%26%20Temple%20Full-Day%20Explorer%20(%2475%2Fperson)%0A%0APlease%20let%20me%20know%20available%20dates!" target="_blank" class="btn btn-whatsapp" style="text-align:center;">Book via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Package 3 -->
+            <div class="package-card">
+                <img src="full day.WEBP" alt="2 Days Polonnaruwa Stay" class="pkg-img">
+                <div class="pkg-body">
+                    <div>
+                        <span class="pkg-badge">2 DAYS / 1 NIGHT STAY</span>
+                        <h3>Complete Kingdom & Safari Stay</h3>
+                        <div class="pkg-price">$140 <span>/ per person</span></div>
+                        <ul class="pkg-list">
+                            <li>1 Night Comfort Hotel / Eco-Lodge Room</li>
+                            <li>Elephant Transit Home + 4x4 Jeep Safari</li>
+                            <li>Ancient Ruins Tour + Sunset Boat Ride</li>
+                            <li>All Tuk-Tuk Transfers & Breakfast Included</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/94769670231?text=Hello%20Tusk%20%26%20Temple%20Trails!%20%F0%9F%90%98%0A%0AI%20would%20like%20to%20book%20this%20package%3A%0A*Package%3A*%20Complete%20Kingdom%20%26%20Safari%20Stay%20(%24140%2Fperson)%0A%0APlease%20let%20me%20know%20available%20dates!" target="_blank" class="btn btn-gold" style="text-align:center;">Book via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Trip Builder (Sends Full Details to 94769670231) -->
+    <section id="custom-trip">
+        <div class="section-header">
+            <h2>Build Your Custom Polonnaruwa Trip</h2>
+            <p>Select the exact activities, transport, and hotel rooms you want. All your details will be sent directly to our WhatsApp for an instant custom quote.</p>
+        </div>
+
+        <div class="builder-container">
+            <form id="whatsappForm">
+                <label style="font-weight:700; display:block; margin-bottom:12px; color:var(--primary); font-size:1.05rem;">1. Select Services You Want to Include:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-item"><input type="checkbox" name="service" value="Elephant Transit Home Visit"> 🐘 Elephant Transit Home</label>
+                    <label class="checkbox-item"><input type="checkbox" name="service" value="4x4 Wildlife Jeep Safari"> 🚙 4x4 Jeep Safari</label>
+                    <label class="checkbox-item"><input type="checkbox" name="service" value="Ancient Ruins & Village Tuk-Tuk"> 🛺 Tuk-Tuk Tour</label>
+                    <label class="checkbox-item"><input type="checkbox" name="service" value="Sunset Lake Boat Ride"> 🚤 Lake Boat Ride</label>
+                    <label class="checkbox-item"><input type="checkbox" name="service" value="Hotel / Guesthouse Room"> 🏨 Hotel / Room Booking</label>
+                    <label class="checkbox-item"><input type="checkbox" name="service" value="Pickup / Drop Transport"> 🚐 Pickup / Drop Transfer</label>
+                </div>
+
+                <label style="font-weight:700; display:block; margin-bottom:12px; color:var(--primary); font-size:1.05rem;">2. Your Trip Details:</label>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="custName" placeholder="e.g. Sarah Jenkins" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Country / Nationality</label>
+                        <input type="text" id="custCountry" placeholder="e.g. UK, Germany, France">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Arrival Date *</label>
+                        <input type="date" id="tripDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Days / Nights</label>
+                        <select id="tripDuration">
+                            <option value="Half Day">Half Day</option>
+                            <option value="1 Full Day" selected>1 Full Day</option>
+                            <option value="2 Days / 1 Night">2 Days / 1 Night</option>
+                            <option value="3 Days / 2 Nights">3 Days / 2 Nights</option>
+                            <option value="More than 3 Days">More than 3 Days</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Number of Guests *</label>
+                        <input type="number" id="guestCount" min="1" value="2" required>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 25px;">
+                    <label>Hotel Preference / Pickup Location / Special Requests</label>
+                    <textarea id="notes" rows="3" placeholder="Tell us your preferred hotel type (Budget / Mid-range / Luxury), pickup hotel or station, or any special requests..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-whatsapp" style="width:100%; font-size:1.12rem; padding:16px;">Send Full Tour Plan via WhatsApp →</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="about" class="packages-bg">
+        <div class="section-header">
+            <h2>Why Book With Tusk & Temple Trails?</h2>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-box">
+                <h3>100% Local Polonnaruwa Crew</h3>
+                <p>Born and raised right beside the Elephant Transit Home and ancient ruins. We know every hidden trail and best wildlife viewing times.</p>
+            </div>
+            <div class="trust-box">
+                <h3>Direct & Fair Local Prices</h3>
+                <p>No extra middleman fees. We connect you directly with trusted local safari drivers, boat operators, and clean hotels.</p>
+            </div>
+            <div class="trust-box">
+                <h3>Instant WhatsApp Assistance</h3>
+                <p>Fast replies and 24/7 support during your entire stay in Polonnaruwa so you can travel worry-free.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest Reviews & Feedback Section -->
+    <section id="reviews">
+        <div class="section-header">
+            <h2>What Our Guests Say</h2>
+            <p>Real experiences from travelers who explored Polonnaruwa with our local crew.</p>
+        </div>
+
+        <!-- Verified Guest Reviews Cards (All visitors can see these) -->
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Amazing day in Polonnaruwa! Visiting the Elephant Transit Home and doing the afternoon jeep safari was unforgettable. Everything was arranged smoothly on WhatsApp at a very fair local price."</p>
+                </div>
+                <div class="review-author">
+                    <div>
+                        <strong>Hannah & Tom</strong><br>
+                        <span style="color:var(--text-muted); font-size:0.84rem;">United Kingdom</span>
+                    </div>
+                    <span class="review-badge">✓ Verified Guest</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Best local team in Polonnaruwa! Our tuk-tuk guide showed us hidden village trails and the sunset boat ride on Parakrama Samudra was pure magic. Highly recommended!"</p>
+                </div>
+                <div class="review-author">
+                    <div>
+                        <strong>Lukas Weber</strong><br>
+                        <span style="color:var(--text-muted); font-size:0.84rem;">Germany</span>
+                    </div>
+                    <span class="review-badge">✓ Verified Guest</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Super friendly, honest, and reliable. They arranged our lake-view room, ancient city tour, and safari in one package without any stress. Felt like traveling with local friends."</p>
+                </div>
+                <div class="review-author">
+                    <div>
+                        <strong>Claire Moreau</strong><br>
+                        <span style="color:var(--text-muted); font-size:0.84rem;">France</span>
+                    </div>
+                    <span class="review-badge">✓ Verified Guest</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leave Your Feedback Form -->
+        <div class="feedback-box">
+            <h3>Traveled With Us? Share Your Experience!</h3>
+            <p>Your feedback helps fellow travelers plan their Polonnaruwa trip with confidence.</p>
+            <form id="feedbackForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Your Name *</label>
+                        <input type="text" id="revName" placeholder="e.g. David Miller" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Country</label>
+                        <input type="text" id="revCountry" placeholder="e.g. Australia, Netherlands">
+                    </div>
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+                        <select id="revRating">
+                            <option value="5 Stars (★★★★★)">★★★★★ — Excellent (5/5)</option>
+                            <option value="4 Stars (★★★★☆)">★★★★☆ — Very Good (4/5)</option>
+                            <option value="3 Stars (★★★☆☆)">★★★☆☆ — Good (3/5)</option>
+                            <option value="2 Stars (★★☆☆☆)">★★☆☆☆ — Fair (2/5)</option>
+                            <option value="1 Star (★☆☆☆☆)">★☆☆☆☆ — Poor (1/5)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label>Your Review / Recommendation *</label>
+                    <textarea id="revComment" rows="3" placeholder="Tell future travelers about your safari, tuk-tuk tour, boat ride, or hotel stay..." required></textarea>
+                </div>
+
+                <div class="fb-actions-row">
+                    <button type="submit" class="btn btn-whatsapp">Send Review via WhatsApp →</button>
+                    <a href="https://www.facebook.com/share/1CgUHRHGKw/" target="_blank" rel="noopener noreferrer" class="btn btn-fb">Review Us on Facebook</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/94769670231?text=Hello%20Tusk%20%26%20Temple%20Trails!%20I%20have%20a%20question%20about%20Polonnaruwa%20tours." target="_blank" class="float-wa">
+        💬 Chat on WhatsApp
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Tusk & Temple Trails</h3>
+        <p>Polonnaruwa, Sri Lanka • WhatsApp: +94 76 967 0231</p>
+        <p style="margin-top:15px; font-size:0.82rem; opacity:0.8;">© 2026 Tusk & Temple Trails. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to Send Full Tour Details & Guest Feedback to WhatsApp 94769670231 -->
+    <script>
+        const agencyWhatsAppNumber = "94769670231";
+
+        // Custom Trip Form
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('custName').value.trim();
+            const country = document.getElementById('custCountry').value.trim();
+            const date = document.getElementById('tripDate').value;
+            const duration = document.getElementById('tripDuration').value;
+            const guests = document.getElementById('guestCount').value;
+            const notes = document.getElementById('notes').value.trim();
+
+            const selectedServices = [];
+            document.querySelectorAll('input[name="service"]:checked').forEach((checkbox) => {
+                selectedServices.push("• " + checkbox.value);
+            });
+
+            const servicesText = selectedServices.length > 0 ? selectedServices.join("\n") : "• General Tour Inquiry";
+
+            const rawMessage = `*NEW TOUR INQUIRY - TUSK & TEMPLE TRAILS* 🐘🏛️\n\n` +
+                               `*Guest Name:* ${name}\n` +
+                               `*Country:* ${country ? country : "Not specified"}\n` +
+                               `*Arrival Date:* ${date}\n` +
+                               `*Duration:* ${duration}\n` +
+                               `*Number of Guests:* ${guests}\n\n` +
+                               `*Selected Services:*\n${servicesText}\n\n` +
+                               `*Special Notes / Hotel Pref:*\n${notes ? notes : "None"}\n\n` +
+                               `Please send me the availability and price quote!`;
+
+            const whatsappURL = `https://wa.me/${agencyWhatsAppNumber}?text=${encodeURIComponent(rawMessage)}`;
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Guest Feedback Form
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const revName = document.getElementById('revName').value.trim();
+            const revCountry = document.getElementById('revCountry').value.trim();
+            const revRating = document.getElementById('revRating').value;
+            const revComment = document.getElementById('revComment').value.trim();
+
+            const feedbackMessage = `*NEW GUEST REVIEW - TUSK & TEMPLE TRAILS* ⭐🐘\n\n` +
+                                    `*Guest Name:* ${revName}\n` +
+                                    `*Country:* ${revCountry ? revCountry : "Not specified"}\n` +
+                                    `*Rating:* ${revRating}\n\n` +
+                                    `*Review / Recommendation:*\n"${revComment}"`;
+
+            const whatsappURL = `https://wa.me/${agencyWhatsAppNumber}?text=${encodeURIComponent(feedbackMessage)}`;
+            window.open(whatsappURL, '_blank');
+        });
+    </script>
+</body>
+</html>
